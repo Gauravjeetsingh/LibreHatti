@@ -1,0 +1,16 @@
+web:
+  build: .
+  command: python src/manage.py runserver 0.0.0.0:8000
+  volumes:
+    - .:/code
+  ports:
+    - "8000:8000"
+  links:
+    - db
+db:
+  image: mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=YOUR_MYSQL_ROOT_PASSWORD
+    - MYSQL_USER=librehatti
+    - MYSQL_PASSWORD=librehatti
+    - MYSQL_DATABASE=librehatti

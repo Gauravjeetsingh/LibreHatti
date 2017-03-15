@@ -19,11 +19,11 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_name',
-        'USER': 'db_user',
-        'PASSWORD': 'db_password',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'librehatti',
+        'USER': 'librehatti',
+        'PASSWORD': 'librehatti',
+        'HOST': 'db',
+        'PORT': '3306',
     }
 }
 
@@ -58,7 +58,7 @@ STATIC_ROOT = ''
 STATIC_URL = '/librehatti/static/'
 
 STATICFILES_DIRS = (
-    '../static',
+    os.path.join(BASE_DIR, 'static'),
 )
 
 STATICFILES_FINDERS = (
